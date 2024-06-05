@@ -1,0 +1,59 @@
+@-moz-document url-prefix("https://dtf.ru") {
+/* Отключение кнопки выбора дополнительных реакций */
+div.reaction-button:has(svg) {
+	display: none;
+}
+
+/* Отключение отступа и подложки кнопок */
+div.reaction-button:has(img),
+div.reaction-button:has(img):hover {
+	padding: 0 !important;
+	background: none !important;
+}
+
+/* Эффект прозрачности, цвета и красного цвета при наведении */
+div.reaction-button:has(img):hover::before {
+	filter: opacity(.6);
+	/* 	color: crimson; */
+	transition-duration: .2s;
+}
+
+/* Внешний вид не нажатой кнопки лайка */
+div.reaction-button:has(img)::before {
+	content: '♡';
+	color: var(--theme-color-text-secondary);
+	margin-left: 1px;
+	font-size: 28px;
+	transition-duration: .2s;
+}
+
+/* Цвет количества лайков */
+div.reaction-button:has(img) span {
+	color: var(--theme-color-text-secondary);
+}
+
+/* Внешний вид нажатой кнопки лайка */
+div.reaction-button--active:has(img)::before {
+	content: '♥';
+	margin-left: 1px;
+	font-size: 28px;
+	color: crimson;
+}
+
+/* Отключение оригинальной иконки лайка (щас бы раст в 2к24 использовать в качестве иконок, ага) */
+div.reaction-button img {
+	display: none;
+}
+
+/* Отключение дополнительных кнопок "кастомных" лайков */
+div.comment__reactions:has(.reaction-button):has(img) > div.reaction-button:not(:first-child) {
+	display: none;
+}
+div.reactions:has(.reaction-button):has(img) > div.reaction-button:not(:first-child) {
+	display: none;
+}
+
+.reaction-plus-restriction {
+	display: none;
+}
+}
