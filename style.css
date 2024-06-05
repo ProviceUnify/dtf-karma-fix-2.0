@@ -11,6 +11,7 @@
 		display: none;
 	}
 
+	/* Совмещение и выравнивание ряда кнопок */
 	.content--short .content__reactions {
 		padding-left: 24px !important;
 		padding-right: 0;
@@ -18,35 +19,27 @@
 		padding-bottom: 0;
 		padding-top: 0;
 	}
-
 	.content--short .content-footer {
 		padding-left: 12px;
 	}
 
+	/* Интерпретация блока поста в ленте как grid; перераспределение контента */
 	.content--short {
 		display: grid;
 		grid-template-rows: auto auto auto auto;
 		grid-template-columns: auto 1fr;
 	}
-
 	.content--short > div:nth-child(1) {
 		grid-column: span 2;
-		/* Первый элемент занимает две колонки */
 	}
-
 	.content--short > div:nth-child(2) {
 		grid-column: span 2;
-		/* Второй элемент также занимает две колонки */
 	}
-
 	.content--short > div:nth-child(3) {
 		grid-column: span 1;
-		/* Третий элемент занимает одну колонку */
 	}
-
 	.content--short > div:nth-child(4) {
 		grid-column: span 1;
-		/* Четвертый элемент также занимает одну колонку */
 	}
 
 	/* Отключение отступа и подложки кнопок */
@@ -101,4 +94,3 @@
 		display: none;
 	}
 }
-Reviews
